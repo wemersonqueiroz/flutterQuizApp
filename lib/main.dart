@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:flutter/widgets.dart';
+import 'package:quizapp/start_screen.dart';
 
 void main() {
   runApp(const MyApp());
@@ -13,37 +13,17 @@ class MyApp extends StatelessWidget {
     return MaterialApp(
       home: Scaffold(
         body: Container(
-          decoration: const BoxDecoration(
-            color: Color.fromARGB(255, 70, 23, 132),
-          ),
-          child: Center(
-            child: Column(mainAxisSize: MainAxisSize.min, children: [
-              Image.asset("./assets/images/quiz-logo.png", width: 300),
-              const SizedBox(
-                height: 60,
+            decoration: const BoxDecoration(
+              gradient: LinearGradient(
+                begin: Alignment.topLeft,
+                end: Alignment.bottomRight,
+                colors: [
+                  Color.fromARGB(255, 136, 109, 172),
+                  Color.fromARGB(255, 70, 23, 132),
+                ],
               ),
-              const Text(
-                "Learn Flutter the fun way!",
-                style: TextStyle(
-                  color: Colors.white,
-                  fontSize: 24,
-                ),
-              ),
-              const SizedBox(
-                height: 20,
-              ),
-              TextButton(
-                onPressed: () {},
-                child: const Text(
-                  "Start Quiz",
-                  style: TextStyle(
-                    color: Colors.white,
-                  ),
-                ),
-              )
-            ]),
-          ),
-        ),
+            ),
+            child: const StartScreen()),
       ),
     );
   }
